@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate, useNavigate } from 'react-router-dom';
 import HomePage from './pages/HomePage/HomePage.tsx';
-import ProfilePage from './pages/ProfilePage.tsx';
+import ProfilePage from './pages/ProfilePage/ProfilePage.tsx';
 import QuestionsPage from './pages/QuestionsPage.tsx';
 
 // Utility function to check authentication

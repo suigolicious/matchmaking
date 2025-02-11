@@ -1,22 +1,29 @@
-const express = require('express');
-const cors = require('cors');
-const dotenv = require('dotenv');
+const express = require("express");
+const mongoose = require("mongoose");
+const cors = require("cors");
+const dotenv = require("dotenv");
 
-dotenv.config(); // Load environment variables
+dotenv.config();
 
 const app = express();
+app.use(express.json());
+app.use(cors());
+
+// Connect to MongoDB
+mongoose.connect(process.env.MONGO_URI, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true
+}).then(() => console.log("✅ MongoDB Connected"))
+  .catch(err => console.error("❌ MongoDB connection error:", err));
+
+// Import Routes
+const authRoutes = require("./routes/authRoutes"); // ✅ Import auth routes
+app.use("/api/auth", authRoutes); // ✅ Ensure this is included
+
+// Test Route
+app.get("/", (req, res) => {
+    res.send("Matchmaking API is running...");
+});
+
 const PORT = process.env.PORT || 5001;
-
-// Middleware
-app.use(express.json()); // Parse JSON request bodies
-app.use(cors()); // Enable Cross-Origin Resource Sharing
-
-// Sample Route
-app.get('/', (req, res) => {
-    res.send('Matchmaking Backend is Running! 🚀');
-});
-
-// Start Server
-app.listen(PORT, () => {
-    console.log(`Server is running on port ${PORT}`);
-});
+app.listen(PORT, () => console.log(`🚀 Server running on port ${PORT}`));
