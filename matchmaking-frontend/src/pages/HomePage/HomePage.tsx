@@ -4,14 +4,15 @@ import "./HomePage.scss"; // Import SCSS styles
 
 const HomePage = () => {
   const [phone, setPhone] = useState("");
+  const [error, setError] = useState("");
   const navigate = useNavigate();
 
   const handleSubmit = async () => {
     if (!phone.match(/^\d{10}$/)) {
-      alert("Please enter a valid 10-digit phone number");
+      setError("Please enter a valid 10-digit phone number");
       return;
     }
-
+    setError("");
     const response = await fetch("http://localhost:5001/api/auth/check-phone", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -31,6 +32,7 @@ const HomePage = () => {
     <div className="home-container">
       <div className="home-box">
         <h1 className="title">Enter Your Phone Number</h1>
+        {error && <p style={{ color: "red", fontSize: "0.9rem" }}>{error}</p>}
         <input
           type="tel"
           value={phone}
