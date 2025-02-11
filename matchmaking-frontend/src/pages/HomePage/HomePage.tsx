@@ -12,7 +12,7 @@ const HomePage = () => {
       return;
     }
 
-    const response = await fetch("/api/auth/check-phone", {
+    const response = await fetch("http://localhost:5001/api/auth/check-phone", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ phone }),

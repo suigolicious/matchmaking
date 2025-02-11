@@ -1,0 +1,106 @@
+// Dark Mode Colors
+$bg-color: #121212;
+$text-color: #ffffff;
+$input-bg: #1e1e1e;
+$input-border: #333;
+$primary-color: #007bff;
+
+.profile-container {
+  height: 100vh;
+  background-color: $bg-color;
+  color: $text-color;
+  align-content: center;
+}
+
+.profile-box {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  padding: 0 1rem;
+}
+
+.title {
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+}
+
+.input,
+.file-input {
+  padding: 0.8rem;
+  font-size: 1rem;
+  color: $text-color;
+  background-color: $input-bg;
+  border: 1px solid $input-border;
+  border-radius: 8px;
+  outline: none;
+  margin-bottom: 1rem;
+
+  &:focus {
+    border-color: $primary-color;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+  }
+}
+
+.gender-select {
+  width: 100%;
+  padding: 0.8rem;
+  font-size: 1rem;
+  color: #ffffff;
+  background-color: #1e1e1e;
+  border: 1px solid #333;
+  border-radius: 8px;
+  outline: none;
+  margin-bottom: 1rem;
+  cursor: pointer;
+
+  &:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+  }
+}
+
+.button {
+  width: 100%;
+  padding: 0.8rem;
+  font-size: 1rem;
+  font-weight: 500;
+  background-color: $primary-color;
+  color: $text-color;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s;
+
+  &:hover {
+    background-color: darken($primary-color, 10%);
+  }
+}
+
+.image-preview {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 1rem;
+  border: 2px solid $primary-color;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.upload-label {
+  display: inline-block;
+  cursor: pointer;
+  background-color: $primary-color;
+  color: $text-color;
+  padding: 0.6rem 1rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: background 0.3s;
+  margin-bottom: 1rem;
+
+  &:hover {
+    background-color: darken($primary-color, 10%);
+  }
+}
