@@ -1,0 +1,61 @@
+// Dark mode styling
+$bg-color: #121212;
+$text-color: #ffffff;
+$input-bg: #1e1e1e;
+$input-border: #333;
+$primary-color: #007bff;
+
+.home-container {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: $bg-color;
+  color: $text-color;
+}
+
+.home-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  padding: 0 1rem;
+}
+
+.title {
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+}
+
+.input {
+  padding: 0.8rem;
+  font-size: 1rem;
+  color: $text-color;
+  background-color: $input-bg;
+  border: 1px solid $input-border;
+  border-radius: 8px;
+  outline: none;
+  margin-bottom: 1rem;
+
+  &:focus {
+    border-color: $primary-color;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+  }
+}
+
+.button {
+  padding: 0.8rem;
+  font-size: 1rem;
+  font-weight: 500;
+  background-color: $primary-color;
+  color: $text-color;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s;
+
+  &:hover {
+    background-color: darken($primary-color, 10%);
+  }
+}
