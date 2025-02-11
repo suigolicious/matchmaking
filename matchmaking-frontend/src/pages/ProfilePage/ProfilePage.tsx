@@ -54,6 +54,7 @@ const ProfilePage = () => {
     });
 
     if (response.ok) {
+      localStorage.setItem("profileComplete", "true");
       navigate("/questions");
     } else {
       alert("Error saving profile.");

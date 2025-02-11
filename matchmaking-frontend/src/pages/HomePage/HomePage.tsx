@@ -24,7 +24,7 @@ const HomePage = () => {
       localStorage.setItem("token", data.token);
       navigate(data.profileComplete ? "/questions" : "/profile");
     } else {
-      navigate("/profile");
+      setError("Error saving: please try again.")
     }
   };
 
